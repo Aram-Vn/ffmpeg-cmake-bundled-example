@@ -6,6 +6,44 @@ The goal of this repository is to demonstrate a clean project structure where th
 
 This makes the project easier to build, move, and share without requiring a global FFmpeg installation.
 
+> **Note:** This repository uses Git LFS because some bundled FFmpeg DLL files are large.
+> After cloning, make sure Git LFS is installed and run `git lfs pull`.
+
+## Clone Instructions
+
+Install Git LFS first:
+
+```bash
+git lfs install
+```
+
+Clone the repository:
+
+```bash
+git clone git@github.com:Aram-Vn/ffmpeg-cmake-bundled-example.git
+cd ffmpeg-cmake-bundled-example
+```
+
+Pull the Git LFS files:
+
+```bash
+git lfs pull
+```
+
+After cloning, the bundled FFmpeg dependency should exist here:
+
+```text
+FF_VideoInfo/extern/bin
+FF_VideoInfo/extern/include
+FF_VideoInfo/extern/lib
+```
+
+If the `bin`, `include`, or `lib` folders are missing or contain small Git LFS pointer files instead of real binaries, run:
+
+```bash
+git lfs pull
+```
+
 ## Project Structure
 
 ```text
@@ -211,6 +249,33 @@ The module handles:
 * link libraries
 * required Windows system libraries
 * runtime DLL copying
+
+## Large Files and Git LFS
+
+This repository bundles FFmpeg inside:
+
+```text
+FF_VideoInfo/extern
+```
+
+Some FFmpeg DLL files are large, so this repository uses Git LFS.
+
+The large binary files are tracked with Git LFS using patterns like:
+
+```bash
+git lfs track "FF_VideoInfo/extern/bin/*.dll"
+git lfs track "FF_VideoInfo/extern/bin/*.exe"
+git lfs track "FF_VideoInfo/extern/lib/*.lib"
+git lfs track "FF_VideoInfo/extern/lib/*.dll.a"
+git lfs track "FF_VideoInfo/extern/lib/*.def"
+```
+
+After cloning the repository, install Git LFS and pull the dependency files:
+
+```bash
+git lfs install
+git lfs pull
+```
 
 ## Common Runtime Error
 
