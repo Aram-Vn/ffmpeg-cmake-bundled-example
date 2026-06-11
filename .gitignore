@@ -1,0 +1,14 @@
+build/
+*.user
+.vscode/
+.idea/
+
+test.mp4
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+*.7z
+*.zip
+*.rar

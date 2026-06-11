@@ -1,0 +1,5 @@
+FF_VideoInfo/extern/bin/*.dll filter=lfs diff=lfs merge=lfs -text
+FF_VideoInfo/extern/bin/*.exe filter=lfs diff=lfs merge=lfs -text
+FF_VideoInfo/extern/lib/*.lib filter=lfs diff=lfs merge=lfs -text
+FF_VideoInfo/extern/lib/*.dll.a filter=lfs diff=lfs merge=lfs -text
+FF_VideoInfo/extern/lib/*.def filter=lfs diff=lfs merge=lfs -text
